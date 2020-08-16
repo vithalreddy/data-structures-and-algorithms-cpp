@@ -173,7 +173,7 @@ public:
 
 int main()
 {
-    LinkedList a;
+    LinkedList *a = new LinkedList;
     
     int option, value, postion;
 
@@ -200,7 +200,7 @@ int main()
               cout<<"Enter the value to be stored: ";
               cin>>value;
               while(value != -1){
-                    a.insert_end(value);
+                    a->insert_end(value);
                     cout<<"Enter the value to be stored: ";
                     cin>>value;
               }
@@ -210,14 +210,14 @@ int main()
               cout<<"Enter the value to be stored: ";
               cin>>value;
 
-              a.insert_start(value);
+              a->insert_start(value);
               break;
 
       case 3: // Storing the value to be inserted
               cout<<"Enter the value to be stored: ";
               cin>>value;
 
-              a.insert_end(value);
+              a->insert_end(value);
               break;
 
       case 4: // Storing the value to be inserted
@@ -226,21 +226,21 @@ int main()
               cout<<"Enter the value to be stored: ";
               cin>>value;
 
-              a.insert_position(postion, value);
+              a->insert_position(postion, value);
               break;
 
-      case 5: a.delete_start();
+      case 5: a->delete_start();
               break;
 
-      case 6: a.delete_end();
+      case 6: a->delete_end();
               break;
 
       case 7: cout<<"Enter the position to detete node: ";
               cin>>postion;
-              a.delete_position(postion);
+              a->delete_position(postion);
               break;
 
-      case 8: a.display();
+      case 8: a->display();
               break;
 
       case 9: break;
@@ -256,6 +256,6 @@ int main()
         <<"Have a good day.\n\n";
   }
 
-
+  delete a;
 
 }
